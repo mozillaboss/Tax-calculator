@@ -1,0 +1,10 @@
+mat-form-field {
+  padding: 5px;
+  width: 40%;
+}
+
+.drop-down-selecter {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}

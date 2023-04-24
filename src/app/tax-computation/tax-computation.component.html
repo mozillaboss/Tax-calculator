@@ -1,0 +1,78 @@
+<h2>2. Tax Computation</h2>
+<mat-divider></mat-divider>
+
+<br>
+Provide total value taxable electronic service
+
+<div style="width: 100%; padding-top: 20px;">
+  <form class="example-form" [formGroup]="form">
+    <div class="test-class">
+      <div style="width: 70%;">
+        1.Total value of taxable electronic service exclusive if VAT
+      </div>
+      <div style="width: 30%;">
+        <mat-form-field class="example-full-width">
+          <mat-label>THB</mat-label>
+          <input matInput type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" formControlName="saleAmount" (change)="calTotalVAT()" required>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="test-class">
+      <div style="width: 70%;">
+        2.Total VAT to be remitted (7% of 1.)
+      </div>
+      <div style="width: 30%;">
+        <mat-form-field class="example-full-width">
+          <mat-label>THB</mat-label>
+          <input matInput type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" formControlName="taxAmount" (change)="calTax($event)">
+          <mat-error *ngIf="isError">
+            Invalid Tax
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div style="padding-top: 20px;">
+      Incase of late filing and payment, or additional filing
+    </div>
+
+    <div class="test-class">
+      <div style="width: 70%;">
+        3.Surcharge
+      </div>
+      <div style="width: 30%;">
+        <mat-form-field class="example-full-width">
+          <mat-label>THB</mat-label>
+          <input matInput type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" formControlName="surCharge" readonly>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="test-class">
+      <div style="width: 70%;">
+        4.Penalty
+      </div>
+      <div style="width: 30%;">
+        <mat-form-field class="example-full-width">
+          <mat-label>THB</mat-label>
+          <input matInput type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" formControlName="penalty" readonly>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="test-class">
+      <div style="width: 70%;">
+        5.Total amount of VAT, surcharge, and penalty to be remitted (2.+3.+4.)
+      </div>
+      <div style="width: 30%;">
+        <mat-form-field class="example-full-width">
+          <mat-label>THB</mat-label>
+          <input matInput type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');" formControlName="totalAmount" readonly>
+        </mat-form-field>
+      </div>
+    </div>
+
+  </form>
+
+</div>

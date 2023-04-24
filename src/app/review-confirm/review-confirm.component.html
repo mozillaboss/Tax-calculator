@@ -1,0 +1,60 @@
+<div style="width: 100%;">
+  <h2>Tax Filing Detail</h2>
+  <mat-divider></mat-divider>
+  <div style="width: 100%; margin-top: 5px;">
+    <div class="review">
+      <div style="width: 10%;">Type of filing </div>{{ ft }}
+    </div>
+
+    <div class="review">
+      <div style="width: 10%;">Vat Month </div>{{ monthSelect }} {{ yearSelect }}
+    </div>
+
+  </div>
+
+</div>
+
+<div style="width: 100%; margin-top: 20px;">
+  <h2>Tax Computation</h2>
+  <mat-divider></mat-divider>
+  <div style="width: 100%; margin-top: 20px;">
+    <div class="review">
+      <div style="width: 70%;">
+        <label id="example-radio-group-label">Total value of taxable electronic service exclusive of VAT </label>
+      </div>
+      <div style="width: 30%; text-align: right;">
+        {{ form.value.saleAmount }} THB
+      </div>
+    </div>
+
+    <div class="review">
+      <div style="width: 70%;">
+        <label id="example-radio-group-label">Total VAT to be remitted <br> (7% of Total value of taxable electronic service exclusive of VAT) </label>
+      </div>
+      <div style="width: 30%; text-align: right;">
+        {{ form.value.taxAmount }} THB
+      </div>
+    </div>
+
+    <div class="review">
+      <div style="width: 70%;">
+        <label id="example-radio-group-label">Total Amount Payable </label>
+      </div>
+      <div style="width: 30%; text-align: right;">
+        {{ form.value.totalAmount }} THB
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="width: 100%; margin-top: 20px;">
+  <h2>Declaration</h2>
+  <mat-divider></mat-divider>
+  <div style="width: 100%; margin-top: 5px;">
+    <div class="review">
+      I hereby certify that information given aboce are true and correct and agree to be bound by such information.
+    </div>
+
+  </div>
+
+</div>

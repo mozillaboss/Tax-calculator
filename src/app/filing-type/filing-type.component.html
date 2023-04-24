@@ -1,0 +1,8 @@
+<div class="fillingType" [formGroup]="form">
+  <label id="example-radio-group-label">Type of filing <span style="color: red;">*</span></label>
+  <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="filingType">
+    <mat-radio-button class="example-radio-button" *ngFor="let ft of filingType" [checked]="ft.checked" [value]="ft.value" (change)="checkValue($event)">
+      {{ft.value}}
+    </mat-radio-button>
+  </mat-radio-group>
+</div>

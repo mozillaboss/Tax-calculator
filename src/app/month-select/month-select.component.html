@@ -1,0 +1,27 @@
+<div class="drop-down-selecter">
+  <div style="width: 50%;">
+    <h4>Vat-Month <span style="color:red;">*</span></h4>
+    <mat-form-field appearance="fill" [formGroup]="form">
+      <mat-label>Select Month</mat-label>
+      <mat-select formControlName="month">
+        <mat-option *ngFor="let item of month" value={{item.value}} [disabled]="item.select">{{ item.value }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill" [formGroup]="form">
+      <mat-label>Select Year</mat-label>
+      <mat-select formControlName="year">
+        <mat-option *ngFor="let item of year" value={{item}}>{{ item }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div *ngIf="form.value.filingType == 'Additional Filing'" style="width: 50%;">
+    <h4>Type <span style="color:red;">*</span></h4>
+    <mat-form-field appearance="fill" [formGroup]="form">
+      <mat-label>Select Type</mat-label>
+      <mat-select formControlName="type">
+        <mat-option *ngFor="let item of type" value={{item}}>{{ item }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>

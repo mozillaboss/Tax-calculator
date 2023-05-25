@@ -31,6 +31,7 @@ export class AppComponent {
   constructor(private _formBuilder: FormBuilder, public dialog: MatDialog) {
     setInterval(() => {
       this.todaysDataTime = this.now.toLocaleDateString("en-US");
+      this.todaysDataTime = formatDate(this.now, 'HH:mm (zzz) | dd-MM-yy', 'en-US');
     }, 1);
   }
 
